@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">DrawApp</string>
+    <string name="title_activity_login_fr">LoginActivity_fr</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="alternates_for_a"> α Ά ά Α</string>
+    <string name="alternates_for_w"> ς</string>
+    <string name="alternates_for_e"> εέΕΈ</string>
+    <string name="alternates_for_r"> ρΡ</string>
+    <string name="alternates_for_t"> τΤ</string>
+    <string name="alternates_for_y"> υύΎΥ</string>
+    <string name="alternates_for_u"> θΘ</string>
+    <string name="alternates_for_i"> ιΙίΊϊΪr</string>
+
+
+
+
+</resources>

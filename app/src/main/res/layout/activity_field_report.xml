@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Field_report">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/et_customer_fr"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:ems="10"
+        android:hint="Customer"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        android:layout_weight="1"
+        />
+    <EditText
+        android:id="@+id/et_department_fr"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:hint="Department"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        android:layout_weight="1"
+
+        />
+</LinearLayout>
+
+
+
+    <EditText
+        android:id="@+id/et_description_fr"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:layout_height="200dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Type Your Report Here"
+        android:inputType="textMultiLine"
+         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_machine"
+            android:text="Select Machine"
+            android:layout_weight="1"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_work"
+            android:text="Select Work"
+            android:layout_weight="1"
+            android:gravity="center"/>
+
+
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Spinner
+            android:layout_width="match_parent"
+
+            android:layout_height="50dp"
+
+            android:id="@+id/sp_machine"
+            android:layout_weight="1"
+            android:padding="5dp"
+            android:layout_margin="5dp"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/sp_work"
+            android:padding="5dp"
+            android:layout_weight="1"
+            android:layout_margin="5dp"/>
+
+
+    </LinearLayout>
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/et_dtpick_fr"-->
+<!--        android:layout_width="160dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:text="Date"-->
+<!--         />-->
+<!--<LinearLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content">-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextTextPersonName"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:ems="10"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:padding="5dp"-->
+<!--        android:hint="Type Of Work"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:textSize="16sp"-->
+<!--        android:layout_weight="1"-->
+<!--        />-->
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/et_serialnumber_fr"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:padding="5dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint="Serial Number"-->
+<!--        android:inputType="textPersonName"-->
+<!--        android:textSize="16sp"-->
+<!--         />-->
+<!--</LinearLayout>-->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <EditText
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:id="@+id/et_serialnumber_fr"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Serial Number"
+        android:layout_weight="1"
+        android:inputType="textPersonName"
+        />
+    <Button
+        android:id="@+id/addBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:padding="5dp"
+        android:text="Add"
+        android:layout_weight="1"
+
+         />
+
+</LinearLayout>
+
+
+
+<!--    <TextView-->
+<!--        android:id="@+id/tv_reportnumber_fr"-->
+<!--        android:layout_width="160dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_weight="1"-->
+<!--        android:text="Report Number"-->
+<!--         />-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/serial_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+         />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+        <Button
+            android:id="@+id/clear_btn_fr"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Clear"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+
+            />
+        <Button
+            android:id="@+id/submit_btn_fr"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Submit"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            android:padding="5dp"
+            />
+
+    </LinearLayout>
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
