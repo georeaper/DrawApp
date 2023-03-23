@@ -7,11 +7,11 @@ import android.graphics.BitmapFactory
 import android.os.Environment
 import android.util.Log
 import com.itextpdf.text.*
-import com.itextpdf.text.html.WebColors
 import com.itextpdf.text.pdf.*
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.*
+
 //import kotlin.coroutines.jvm.internal.CompletedContinuation.context
 
 
@@ -97,8 +97,12 @@ class PdfCreate {
 
 
         mDoc.add(img)
+
             val bm1 =BitmapFactory. decodeFile(signImg.toString())
-            //val bm = BitmapFactory.decodeResource(getContext().getResources(),R.drawable.img)
+            //val imageHeight: Int = options.outHeight
+            //val imageWidth: Int = options.outWidth
+            //val bmnew=Bitmap.createScaledBitmap(bm1, 50, 50, true)
+
             val stream1 = ByteArrayOutputStream()
             bm1.compress(Bitmap.CompressFormat.PNG, 100, stream1)
             var img2: Image? = null
@@ -116,9 +120,13 @@ class PdfCreate {
 
 
             val tabletitle=PdfPTable(1)
+
             //tabletitle.getDefaultCell().setBorder(Rectangle.NO_BORDER)
             var titlecell=PdfPCell(Phrase("Field Service Report", Font(urName,20f)))
             titlecell.fixedHeight= 50f
+            titlecell.border=0
+            titlecell.horizontalAlignment=Element.ALIGN_CENTER
+            titlecell.verticalAlignment=Element.ALIGN_CENTER
             tabletitle.addCell(titlecell)
             mDoc.add(tabletitle)
 
@@ -131,43 +139,80 @@ class PdfCreate {
 
             //table arxiko
             val tablehead=PdfPTable(4)
+
+
             tablehead.widthPercentage =80f
             //tablehead.defaultCell.fixedHeight=30f
             var headcell =PdfPCell(Phrase("Report Number", Font(urName)))
             headcell.fixedHeight=30f
+            //headcell.border=0
+            //headcell.border=0
+            //headcell.disableBorderSide(1)//top
+            headcell.disableBorderSide(2)//bottom
+            //headcell.disableBorderSide(4)//left
+            headcell.disableBorderSide(8)//right
             //headcell.setBackgroundColor(WebColors.getRGBColor("#E2E2E2"))
-            headcell.backgroundColor=myColor
+            //headcell.backgroundColor=myColor
             tablehead.addCell(headcell)
+
 
             headcell=PdfPCell(Phrase(datarepnum, Font(urName)))
             headcell.fixedHeight=30f
+            //headcell.disableBorderSide(1)
+            headcell.disableBorderSide(2)
+            headcell.disableBorderSide(4)
+            headcell.disableBorderSide(8)
+            //headcell2.disableBorderSide(8)
 
             tablehead.addCell(headcell)
 
             headcell=PdfPCell(Phrase("date", Font(urName)))
             headcell.fixedHeight=30f
-            headcell.backgroundColor=myColor
+            //headcell.disableBorderSide(1)//top
+            headcell.disableBorderSide(2)//bottom
+            headcell.disableBorderSide(4)//left
+            headcell.disableBorderSide(8)//right
+            //headcell.backgroundColor=myColor
             tablehead.addCell(headcell)
 
             headcell=PdfPCell(Phrase(datadate, Font(urName)))
             headcell.fixedHeight=30f
+            //headcell.disableBorderSide(1)//top
+            headcell.disableBorderSide(2)//bottom
+            headcell.disableBorderSide(4)//left
+            //headcell.disableBorderSide(8)//right
             tablehead.addCell(headcell)
 
             headcell=PdfPCell(Phrase("Customer Name", Font(urName)))
             headcell.fixedHeight=30f
+            headcell.disableBorderSide(1)//top
+            //headcell.disableBorderSide(2)//bottom
+            //headcell.disableBorderSide(4)//left
+            headcell.disableBorderSide(8)//right
             tablehead.addCell(headcell)
 
             headcell=PdfPCell(Phrase(datacustomer, Font(urName)))
             headcell.fixedHeight=30f
+            headcell.disableBorderSide(1)//top
+            //headcell.disableBorderSide(2)//bottom
+            headcell.disableBorderSide(4)//left
+            headcell.disableBorderSide(8)//right
             tablehead.addCell(headcell)
 
             headcell=PdfPCell(Phrase("Department", Font(urName)))
             headcell.fixedHeight=30f
+            headcell.disableBorderSide(1)//top
+            //headcell.disableBorderSide(2)//bottom
+            headcell.disableBorderSide(4)//left
+            headcell.disableBorderSide(8)//right
             tablehead.addCell(headcell)
 
             headcell=PdfPCell(Phrase(datadepart, Font(urName)))
             headcell.fixedHeight=30f
-            headcell.isUseBorderPadding
+            headcell.disableBorderSide(1)//top
+            //headcell.disableBorderSide(2)//bottom
+            headcell.disableBorderSide(4)//left
+            //headcell.disableBorderSide(8)//right
             tablehead.addCell(headcell)
 
 
@@ -195,11 +240,14 @@ class PdfCreate {
             val fname=PdfPCell(Phrase(dataname, Font(urName)))
             fname.fixedHeight=30f
             tablefoot.addCell(fname)
+
             val signcell=PdfPCell(Phrase("Signature", Font(urName)))
-            fname.fixedHeight=50f
+
+
             tablefoot.addCell(signcell)
             //val signimg=PdfPCell(Phrase(dataname, Font(urName)))
             //fname.fixedHeight=50f
+
             tablefoot.addCell(img2)
 
 
@@ -225,11 +273,12 @@ class PdfCreate {
 
 
             mDoc.newPage()
+            //val table = Table(floatArrayOf(25f, 75f))
             //table of checkform
-            val table= PdfPTable(3)
-            table.widthPercentage=80f
-            table.defaultCell.fixedHeight=50f
-            table.defaultCell.border=1
+            val table= PdfPTable(floatArrayOf(60f, 20f,20f))
+//            table.widthPercentage=80f
+//            table.defaultCell.fixedHeight=50f
+//            table.defaultCell.border=1
 
             table.addCell(PdfPCell(Phrase("Inspection Title", Font(urName))))
             table.addCell(PdfPCell(Phrase("Measurement", Font(urName))))

@@ -54,10 +54,10 @@ class LoginForm : AppCompatActivity() {
         val rpath = Environment.getExternalStorageDirectory()
         val rDir = File(rpath,"DrawUp")
         rDir.mkdir()
-        val dirworks=File(rDir,"Works")
-        dirworks.mkdir()
-        val dirmachine=File(rDir,"Machines")
-        dirmachine.mkdir()
+//        val dirworks=File(rDir,"Works")
+//        dirworks.mkdir()
+//        val dirmachine=File(rDir,"Machines")
+//        dirmachine.mkdir()
 
     }
 }
